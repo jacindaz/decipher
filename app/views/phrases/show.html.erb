@@ -5,8 +5,8 @@
 
 
 
-<%= link_to "That's dope!", phrase_path(@phrase, params.merge(vote: "up")), method: :patch, id: @phrase, action: :update%>
-<%= link_to "That's whack!", phrase_path(@phrase), method: :patch, id: @phrase, action: :update %>
+<%= button_to "That's dope!", phrase_path(@phrase, params.merge(vote: "up")), action: :update, method: :patch %>
+<%= button_to "That's whack!", phrase_path(@phrase), action: :update, method: :patch  %>
 
 <%= link_to "Home", phrases_path %>
 
