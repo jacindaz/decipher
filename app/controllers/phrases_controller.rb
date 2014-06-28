@@ -24,13 +24,27 @@ class PhrasesController < ApplicationController
     end
   end
 
+  def update
+    @phrase = Phrase.find(params[:id])
+
+    if
+      @phrase.upvotes += 1
+    else
+      @phrase.downvotes += 1
+    end
+
+    @phrase.save
+
+    redirect_to phrase_path(@phrase)
+  end
+
   def destroy
   end
 
    private
 
   def phrase_params
-    params.require(:phrase).permit(:slang, :description, :example)
+    params.require(:phrase).permit(:slang, :description, :example, :upvotes, :downvotes)
   end
 
 end

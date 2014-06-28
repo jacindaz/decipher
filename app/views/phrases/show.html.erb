@@ -2,4 +2,8 @@
 <%= @phrase.description %>
 <%= @phrase.example %>
 
+
+<%= link_to "That's dope!", phrase_path(@phrase), method: :patch, id: @phrase, action: :update %>
+<%= link_to "That's whack!", phrase_path(@phrase), method: :patch, id: @phrase, action: :update %>
+
 <%= link_to "Home", phrases_path %>
