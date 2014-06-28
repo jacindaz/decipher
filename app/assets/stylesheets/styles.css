@@ -1,0 +1,17 @@
+body {
+  background-color: #4e7ca0;
+  margin: 2% 10%;
+}
+
+#inner-div {
+  background-color:white;
+  height: 100%;
+  padding: 2% 5%;
+}
+
+#header-styles {
+  padding: 2% 5%;
+  height: 100%;
+  width: 100%;
+  background-color:white;
+}
