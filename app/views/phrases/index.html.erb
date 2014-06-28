@@ -12,4 +12,4 @@
 
 <%= link_to "Add a new phrase", new_phrase_path %>
 
-<%= link_to "Random Phrase" %>
+<%= link_to "Random Phrase", params.merge(random: "yes") %>
