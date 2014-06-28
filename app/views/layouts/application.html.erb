@@ -8,11 +8,31 @@
 </head>
 <body>
 
-<div id="header-styles">
-  <h1 style="font-family: 1942_report1942_report">Decipher Dictionary</h1>
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <h1 id="header-font">Decipher Dictionary</h1>
+        <%= simple_form_for :search, url: phrases_path(:index), html: {class: 'navbar-form'}, method: :get do |f| %>
+        <%= f.input :query, placeholder: "Search Phrases", label: false, input_html: { class:
+      'form-control'} %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
 <div id="inner-div">
+  <div class="container">
+    <% if flash.any? %>
+      <div class="alert alert-info">
+       <strong>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </strong>
+    </div>
+  <% end %>
+</div>
+
   <%= yield %>
 </div>
 
