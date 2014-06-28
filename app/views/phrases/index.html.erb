@@ -1,5 +1,13 @@
 <% @phrases.each do |phrase|%>
-  <%= link_to phrase.slang, phrase_path(phrase) %>
+  <div class="jumbotron">
+    <h1><%= link_to phrase.slang, phrase_path(phrase) %></h1>
+    <p><%= phrase.description %></p>
+    <p><i><%= phrase.example %></i></p>
+    <p>
+      <%= link_to "That's dope!", phrase_path(phrase, params.merge(vote: "up")), method: :patch, id: phrase, action: :update, :class=>"btn btn-info", :role => "button" %>
+      <%= link_to "That's whack!", phrase_path(phrase), method: :patch, id: phrase, action: :update, :class=>"btn btn-danger", :role => "button" %>
+    </p>
+  </div><br><br>
 <% end %>
 
 <%= link_to "Add a new phrase", new_phrase_path %>
