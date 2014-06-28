@@ -1,5 +1,4 @@
 class PhrasesController < ApplicationController
-  include PgSearch
 
   def index
     if params[:search]
@@ -41,6 +40,7 @@ class PhrasesController < ApplicationController
   def update
     @phrase = Phrase.find(params[:id])
 
+
     if params[:vote] == "up"
       @phrase.upvotes += 1
     else
@@ -49,7 +49,12 @@ class PhrasesController < ApplicationController
 
     @phrase.save
 
-    redirect_to phrase_path(@phrase)
+
+    if params[:location] == "index"
+      redirect_to phrases_path
+    else
+      redirect_to phrase_path(@phrase)
+    end
   end
 
   def destroy

@@ -4,8 +4,8 @@
     <p><%= phrase.description %></p>
     <p><i><%= phrase.example %></i></p>
     <p>
-      <%= link_to "That's dope!", phrase_path(phrase, params.merge(vote: "up")), method: :patch, id: phrase, action: :update, :class=>"btn btn-info", :role => "button" %>
-      <%= link_to "That's whack!", phrase_path(phrase), method: :patch, id: phrase, action: :update, :class=>"btn btn-danger", :role => "button" %>
+      <%= button_to "That's dope!", phrase_path(phrase, params.merge(vote: "up", location: "index")), method: :patch, id: phrase, action: :update, :class=>"btn btn-info", :role => "button" %>
+      <%= button_to "That's whack!", phrase_path(phrase, params.merge(location: "index")), method: :patch, id: phrase, action: :update, :class=>"btn btn-danger", :role => "button" %>
     </p>
     <h4>Score</h4>
       <p><%= phrase.upvotes - phrase.downvotes %></p>

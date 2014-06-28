@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 
 gem 'simple_form'
 
-gem 'pg_search'
+# gem 'pg_search'
 
 group :development, :test do
   gem 'pry-rails'
