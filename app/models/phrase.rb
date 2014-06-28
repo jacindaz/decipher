@@ -21,4 +21,8 @@ class Phrase < ActiveRecord::Base
     self.downvotes
   end
 
+   def self.search(query)
+    where("to_tsvector(slang) || ' ' || to_tsvector(description) @@ plainto_tsquery(?)", query)
+  end
+
 end
