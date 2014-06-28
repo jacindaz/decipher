@@ -1,10 +1,10 @@
 body {
-  background-color: #4e7ca0;
+  background-color: #D0F2E1;
   margin: 2% 10%;
 }
 
 #inner-div {
-  background-color:white;
+  background-color: white;
   height: 100%;
   padding: 2% 5%;
 }
@@ -16,16 +16,9 @@ body {
   background-color:white;
 }
 
-#header-font { font-family: '1942-webfont' }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: '1942-webfont';
-}
-
-@font-face {
-    font-family: '1942-webfont';
-    src: url(font-path('1942-webfont.eot') + "?#iefix") format('embedded-opentype'),
-         url(font-path('1942-webfont.woff')) format('woff'),
-         url(font-path('1942-webfont.ttf'))  format('truetype'),
-         url(font-path('1942-webfont.svg') + "#1942-webfont") format('svg');
+.slang-div {
+  background-color: #EBF0ED;
+  padding: 5px;
+  width: 50%;
+  border-radius: 15px;
 }
