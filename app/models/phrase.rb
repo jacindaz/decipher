@@ -25,10 +25,4 @@ class Phrase < ActiveRecord::Base
     where("to_tsvector(slang) || ' ' || to_tsvector(description) @@ plainto_tsquery(?)", query)
   end
 
-
-  def self.random
-    offset = rand(count)
-    first(offset: offset)
-  end
-
 end
