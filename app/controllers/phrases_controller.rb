@@ -1,8 +1,10 @@
 class PhrasesController < ApplicationController
+  include PgSearch
 
   def index
     if params[:search]
-      @phrases = Phrase.search(params[:search][:query])
+      search_term = params[:search][:query]
+      @phrases = Phrase.loose_search(search_term)
     else
       @phrases = Phrase.all
     end

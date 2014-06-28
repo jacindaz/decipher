@@ -1,4 +1,6 @@
 class Phrase < ActiveRecord::Base
+  include PgSearch
+
   has_many :votes
 
   validate :slang, presence: true, uniqueness: true
@@ -21,8 +23,20 @@ class Phrase < ActiveRecord::Base
     self.downvotes
   end
 
-   def self.search(query)
-    where("to_tsvector(slang) || ' ' || to_tsvector(description) @@ plainto_tsquery(?)", query)
-  end
+    pg_search_scope :loose_search,
+                  against: :slang,
+                  using: {
+                    trigram: {
+                      threshold: 0.1
+                    }
+                  }
+
+    # pg_search_scope :roughly_spelled_like,
+    #               :against => :name,
+    #               :using => {
+    #                 :trigram => {
+    #                   :threshold => 0.1
+    #                 }
+    #               }
 
 end
