@@ -1,7 +1,11 @@
 class PhrasesController < ApplicationController
 
   def index
-    @phrases = Phrase.all
+    if params[:search]
+      @phrases = Phrase.search(params[:search][:query])
+    else
+      @phrases = Phrase.all
+    end
   end
 
   def show
