@@ -9,12 +9,13 @@ class PhrasesController < ApplicationController
   end
 
   def show
-    if params[:random]
+    if params[:id] == "random"
       offset = rand(Phrase.count)
-      @phrase = Phrase.first(:offset => offset)
+      @phrase = Phrase.offset(offset).take
     else
       @phrase = Phrase.find(params[:id])
     end
+
     @score = @phrase.upvotes - @phrase.downvotes
 
   end
