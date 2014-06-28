@@ -1,7 +1,7 @@
 class PhrasesController < ApplicationController
 
   def index
-    @phrases = Phrases.all
+    @phrases = Phrase.all
   end
 
   def show

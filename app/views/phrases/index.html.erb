@@ -1,1 +1,4 @@
-<h1>This is the index file</h1>
+<% @phrases.each do |phrase|%>
+  <%= link_to phrase.slang, phrase_path(@phrase) %>
+<% end %>
+
