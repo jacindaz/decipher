@@ -9,19 +9,19 @@ class PhrasesController < ApplicationController
   end
 
   def show
-    @phrase = Phrase.find(params[:id])
+    if params[:id] == "random"
+      offset = rand(Phrase.count)
+      @phrase = Phrase.offset(offset).take
+    else
+      @phrase = Phrase.find(params[:id])
+    end
+
     @score = @phrase.upvotes - @phrase.downvotes
+
   end
 
   def new
     @phrase = Phrase.new
-  end
-
-  def random
-    offset = rand(Phrase.count)
-    phrase = Phrase.first(offset: offset)
-
-    redirect_to phrase_path(phrase)
   end
 
   def create
