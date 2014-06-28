@@ -19,8 +19,8 @@ class PhrasesController < ApplicationController
       flash[:notice] = "Phrase submitted!"
       redirect_to phrase_path(@phrase)
     else
-        flash[:notice] = "Your character couldn't be saved."
-        redirect_to phrases_path
+      flash[:notice] = "Your character couldn't be saved."
+      redirect_to phrases_path
     end
   end
 
