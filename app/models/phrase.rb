@@ -1,5 +1,5 @@
 class Phrase < ActiveRecord::Base
-
+  include PgSearch
 
   has_many :votes
 
@@ -10,13 +10,13 @@ class Phrase < ActiveRecord::Base
   validate :downvotes, counter_cache: true
 
 
-    # pg_search_scope :loose_search,
-    #               against: :slang,
-    #               using: {
-    #                 trigram: {
-    #                   threshold: 0.1
-    #                 }
-    #               }
+    pg_search_scope :loose_search,
+                  against: :slang,
+                  using: {
+                    trigram: {
+                      threshold: 0.1
+                    }
+                  }
 
     # pg_search_scope :roughly_spelled_like,
     #               :against => :name,
