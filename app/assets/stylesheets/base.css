@@ -18,7 +18,12 @@ body {
 
 .slang-div {
   background-color: #EBF0ED;
-  padding: 5px;
-  width: 50%;
+  padding: 15px;
+  width: 60%;
   border-radius: 15px;
+}
+
+.inner-slang {
+  width: 20%;
+  padding: 5px;
 }
