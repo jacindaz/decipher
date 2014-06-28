@@ -6,6 +6,7 @@ class PhrasesController < ApplicationController
 
   def show
     @phrase = Phrase.find(params[:id])
+    @score = @phrase.upvotes - @phrase.downvotes
   end
 
   def new
@@ -27,7 +28,7 @@ class PhrasesController < ApplicationController
   def update
     @phrase = Phrase.find(params[:id])
 
-    if
+    if params[:vote] == "up"
       @phrase.upvotes += 1
     else
       @phrase.downvotes += 1
