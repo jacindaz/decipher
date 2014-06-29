@@ -1,13 +1,16 @@
-<%= @phrase.slang %>
-<%= @phrase.description %>
-<%= @phrase.example %>
+<div class="row">
+  <div class="col-md-7" style="float:left;width:60%;">
+    <h1><%= @phrase.slang %></h1>
+    <p><%= @phrase.description %></p>
+    <p><i><%= @phrase.example %></i></p>
+
+    <%= button_to "That's dope!", phrase_path(@phrase, params.merge(vote: "up")), action: :update, method: :patch, :class=>"btn btn-info", :role => "button" %>
+    <%= button_to "That's whack!", phrase_path(@phrase), action: :update, method: :patch, :class=>"btn btn-danger", :role => "button"  %>
+  </div>
+  <div class="col-md-5" style="float:right;margin-right:20%;">
+    <h1>Score</h1>
+    <h3><%= @score %></h3>
+  </div>
+</div>
 
 
-
-
-<%= button_to "That's dope!", phrase_path(@phrase, params.merge(vote: "up")), action: :update, method: :patch %>
-<%= button_to "That's whack!", phrase_path(@phrase), action: :update, method: :patch  %>
-
-<%= link_to "Home", phrases_path %>
-
-<%= @score %>
