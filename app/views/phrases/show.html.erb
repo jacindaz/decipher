@@ -5,7 +5,7 @@
     <p><i><%= @phrase.example %></i></p>
 
     <%= button_to "That's dope!", phrase_path(@phrase, params.merge(vote: "up", location: "show")), action: :update, method: :patch, :class=>"btn btn-info", :role => "button" %>
-    <%= button_to "That's whack!", phrase_path(@phrase, params.merge(, location: "show")), action: :update, method: :patch, :class=>"btn btn-danger", :role => "button"  %>
+    <%= button_to "That's whack!", phrase_path(@phrase, params.merge( location: "show")), action: :update, method: :patch, :class=>"btn btn-danger", :role => "button"  %>
   </div>
   <div class="col-md-5" style="float:right;margin-right:20%;">
     <h1>Score</h1>
