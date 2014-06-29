@@ -40,19 +40,16 @@ class PhrasesController < ApplicationController
   def update
     @phrase = Phrase.find(params[:id])
 
-
     if params[:vote] == "up"
       @phrase.upvotes += 1
     else
       @phrase.downvotes += 1
     end
-
     @phrase.save
-
 
     if params[:location] == "index"
       redirect_to phrases_path
-    else
+    elsif params[:location] == "show"
       redirect_to phrase_path(@phrase)
     end
   end

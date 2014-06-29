@@ -9,7 +9,17 @@
 Phrase.create(slang: "Push that shit",
               description: "A must-shout phrase whenever pushing to github",
               example: "Did you create the models? Sweet! Push that shit!",
-              upvotes: 0, downvotes: 0)
+              upvotes: 3, downvotes: 1)
 
+Phrase.create(slang: "Dumbstrap",
+              description: "When bootstrap is not working properly, all shall refer to it as dumbstrap.",
+              example: "Bootstrap, more like dumbstrap.")
 
-Vote.create(phrase_id: 1, vote: 1)
+Phrase.create(slang: "Refuctoring",
+              description: "The process of taking a well-designed piece of code and, through a series of small, reversible changes, making it completely unmaintainable by anyone except yourself.",
+              example: "You are just full of refuctoring today",
+              upvotes: 8, downvotes: 0)
+
+Phrase.create(slang: "Binding.cry",
+              description: "What you feel deep inside when even binding.pry won't fix your buggies. Commence crying for your mummy.",
+              example: "Binding dot pry, more like binding dot cry...")
